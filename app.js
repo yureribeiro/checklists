@@ -22,8 +22,9 @@ app.set('view engine', 'ejs')
 app.use('/', rootRouter)
 app.use('/checklists', checklistsRouter)
 app.use('/checklists', taskRouter.checklistDependent)
+app.use('/tasks', taskRouter.simple)
 
-//localhost:3000
+
 app.listen(3000, () => {
   console.log('servidor foi iniciado')
 })
