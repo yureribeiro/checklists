@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
-const checklists = require('./src/routes/checklist')
+
+const checklistsRouter = require('./src/routes/checklist')
+const taskRouter = require('./src/routes/task')
 const rootRouter = require('./src/routes/index')
 const methodOverride = require('method-override')
 
@@ -18,7 +20,8 @@ app.set('views', path.join(__dirname, 'src/views'))
 app.set('view engine', 'ejs')
 
 app.use('/', rootRouter)
-app.use('/checklists', checklists)
+app.use('/checklists', checklistsRouter)
+app.use('/checklists', taskRouter.checklistDependent)
 
 //localhost:3000
 app.listen(3000, () => {
