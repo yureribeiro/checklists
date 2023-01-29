@@ -27,6 +27,6 @@ app.use('/checklists', taskRouter.checklistDependent)
 app.use('/tasks', taskRouter.simple)
 
 
-app.listen(port, () => {
+app.listen(3000 || port, () => {
   console.log(`Express está ouvindo a porta ${port}`)
 })
