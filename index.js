@@ -1,7 +1,7 @@
 const express = require('express')
 require('dotenv').config()
 const path = require('path')
-const port = process.env.PORT || 3000
+const port = 3000
 
 
 const checklistsRouter = require('./src/routes/checklist')
