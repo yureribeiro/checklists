@@ -1,6 +1,7 @@
 const express = require('express')
-const path = require('path')
 require('dotenv').config()
+const path = require('path')
+const port = process.env.PORT || 3000
 
 
 const checklistsRouter = require('./src/routes/checklist')
@@ -27,3 +28,6 @@ app.use('/checklists', taskRouter.checklistDependent)
 app.use('/tasks', taskRouter.simple)
 
 
+app.listen(port, () => {
+  console.log(`Express está ouvindo na porta ${port}`)
+})

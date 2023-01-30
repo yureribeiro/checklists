@@ -10,11 +10,11 @@ const setTagAsDone = async (element, id) => {
 
     if(task.done) {
       element.checked = true
-      parent.classList.add('has-text-info')
+      parent.classList.add('has-text-dark')
       parent.classList.add('is-italic')
     } else {
       element.checked = false
-      parent.classList.remove('has-text-info')
+      parent.classList.remove('has-text-dark')
       parent.classList.remove('is-italic')
     }
   } catch (error) {
